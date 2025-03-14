@@ -5,7 +5,7 @@ import { Contract } from "ethers";
 import TreeTokenABI from "@/abis/TreeNFTABI.json";
 import Main from "./components/Main";
 import { Button, Flex, Text } from "@chakra-ui/react";
-import Logo from "./components/Logo.tsx";
+import Logo from "./components/Logo";
 
 function App() {
   const [signer, setSigner] = useState<JsonRpcSigner | null>(null);
@@ -71,7 +71,7 @@ function App() {
         connectWallet={connectWallet}
         disconnectWallet={disconnectWallet}
       />
-      <Main treeNFTContract={treeNFTContract} />
+      <Main signer={signer} treeNFTContract={treeNFTContract} />
     </>
   );
 }
